@@ -55,7 +55,8 @@
     background-size: cover;
     background-attachment: scroll; /* mejor rendimiento en móviles */
     height: 70vh;
-    padding-bottom: 15px;
+    padding-bottom: 18px;
+    padding-top: 5px;
 
   }
 
@@ -176,7 +177,7 @@
   .caja {
     min-width: 60px;
     padding: 8px;
-    margin-bottom: 20px;
+    padding-bottom:20px;
   }
   .caja span {
     font-size: 1.2rem;
