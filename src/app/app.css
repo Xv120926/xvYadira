@@ -1,19 +1,48 @@
 .seccion-con-fondo {
   width: 100%;
-  height: 75vh; /* ocupa toda la pantalla en PC */
+  height: 100vh; /* ocupa toda la pantalla */
   background-image: url("../assets/fondoletras2.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain; /* mantiene proporción */
+  background-size: cover; /* rellena toda la pantalla */
   background-attachment: fixed;
   background-blend-mode: normal;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* texto al fondo */
+  justify-content: flex-end; /* manda el contador al fondo */
   align-items: center;
   padding-bottom: 30px;
 }
+
+/* Ajustes para tablet */
+@media (max-width: 768px) {
+  .seccion-con-fondo {
+    background-size: cover;
+    height: 100vh;
+    padding-bottom: 20px;
+  }
+}
+
+/* Ajustes para celular */
+@media (max-width: 480px) {
+  .seccion-con-fondo {
+    background-size: cover;
+    background-attachment: scroll; /* mejor rendimiento en móviles */
+    height: 100vh;
+    padding-bottom: 15px;
+  }
+
+  .contador {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .caja {
+    margin: 5px;
+  }
+}
+
 
 .seccion-con-fondo-mariposa {
   width: 100%;
@@ -44,13 +73,12 @@
 }
 
 /* Celulares */
+/* Celulares */
 @media (max-width: 480px) {
   .seccion-con-fondo-mariposa {
-    height: 100vh;
     background-repeat: repeat-y; /* en celular se repite vertical */
     background-size: 100px auto; /* patrón más compacto */
     background-attachment: scroll;
-    padding-bottom: 15px;
   }
 
   .seccion-con-fondo-mariposa h1,
@@ -62,28 +90,28 @@
 
 
 /* Tablets */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .seccion-con-fondo {
-    height: 80vh; /* menos alto en pantallas medianas */
-    background-size: cover; /* llena mejor el espacio */
+    height: 80vh;
+    background-size: cover;
     padding-bottom: 20px;
   }
-}
+}*/
 
 /* Celulares */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .seccion-con-fondo {
-    height: 100vh; /* ocupa toda la pantalla */
-    background-size: cover; /* ajusta la imagen */
+    height: 100vh;
+    background-size: cover;
     padding-bottom: 15px;
-  }
+  } */
 
-  .seccion-con-fondo h1,
+  /* .seccion-con-fondo h1,
   .seccion-con-fondo p {
-    font-size: 1.2rem; /* texto más pequeño */
+    font-size: 1.2rem;
     text-align: center;
   }
-}
+}  */
 
 .texto-portada {
   color: white;
@@ -133,36 +161,7 @@
   color: #333;
 }
 
-/* Tablets */
-@media (max-width: 768px) {
-  .caja {
-    min-width: 70px;
-    padding: 10px;
-  }
-  .caja span {
-    font-size: 1.5rem;
-  }
-  .caja p {
-    font-size: 0.9rem;
-  }
-}
 
-/* Celulares */
-@media (max-width: 480px) {
-  .contador {
-    gap: 10px;
-  }
-  .caja {
-    min-width: 60px;
-    padding: 8px;
-  }
-  .caja span {
-    font-size: 1.2rem;
-  }
-  .caja p {
-    font-size: 0.8rem;
-  }
-}
 
 
 
