@@ -1,0 +1,139 @@
+.seccion-con-fondo {
+  width: 100%;
+  height: 75vh; /* ocupa toda la pantalla en PC */
+  background-image: url("/assets/imagenes/fondoletras2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; /* mantiene proporción */
+  background-attachment: fixed;
+  background-blend-mode: normal;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* texto al fondo */
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.seccion-con-fondo-mariposa{
+  width: 100%;
+  height: 100vh; /* ocupa toda la pantalla en PC */
+  background-image: url("/assets/imagenes/mariposas.png");
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: contain; /* mantiene proporción */
+  background-attachment: fixed;
+  background-blend-mode: normal;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* texto al fondo */
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .seccion-con-fondo {
+    height: 80vh; /* menos alto en pantallas medianas */
+    background-size: cover; /* llena mejor el espacio */
+    padding-bottom: 20px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .seccion-con-fondo {
+    height: 100vh; /* ocupa toda la pantalla */
+    background-size: cover; /* ajusta la imagen */
+    padding-bottom: 15px;
+  }
+
+  .seccion-con-fondo h1,
+  .seccion-con-fondo p {
+    font-size: 1.2rem; /* texto más pequeño */
+    text-align: center;
+  }
+}
+
+.texto-portada {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  background: rgba(182, 122, 255, 0.4); /* opcional: fondo semitransparente */
+  position: absolute;
+  bottom: 20px;   /* distancia desde el borde inferior */
+
+}
+.texto-grande {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  background: rgba(182, 122, 255, 0.4); /* opcional: fondo semitransparente */
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+
+/*Apartado del conteo regresivo de la fecha*/
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.caja {
+  background-color: #c9a9e6; /* tu color lila */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.caja span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a3d85; /* tono más oscuro para contraste */
+}
+
+.caja p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .caja {
+    min-width: 70px;
+    padding: 10px;
+  }
+  .caja span {
+    font-size: 1.5rem;
+  }
+  .caja p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .contador {
+    gap: 10px;
+  }
+  .caja {
+    min-width: 60px;
+    padding: 8px;
+  }
+  .caja span {
+    font-size: 1.2rem;
+  }
+  .caja p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
