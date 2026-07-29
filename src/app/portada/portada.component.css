@@ -3,7 +3,6 @@
   width: 100%;
   height: 100vh; /* ocupa toda la pantalla */
   display: flex;
-  flex-direction: column; /* organiza verticalmente */
   justify-content: center;
   align-items: center;
   background-color: #A88BD6;
@@ -12,60 +11,59 @@
 
 /* Flores arriba */
 .flores-arriba {
-  width: 100%;
-  max-height: 25%; /* ocupa solo parte superior */
-  object-fit: contain;
+  width: 100%;          /* ocupa todo el ancho */
+  max-height: 35%;      /* más altas para cubrir bien */
+  object-fit: cover;    /* se estira horizontalmente */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2; /* encima del GIF */
+  z-index: 2;
 }
 
 /* GIF en medio */
 .gif-portada {
-  max-width: 90%;
-  max-height: 60%;
+  max-width: 70%;       /* más pequeño para no tapar */
+  max-height: 50%;
   object-fit: contain;
   position: relative;
-  z-index: 1; /* detrás de las flores */
+  z-index: 1;           /* detrás de las flores */
 }
 
 /* Flores abajo */
 .flores-abajo {
   width: 100%;
-  max-height: 25%; /* ocupa solo parte inferior */
-  object-fit: contain;
+  max-height: 35%;      /* más altas para cubrir bien */
+  object-fit: cover;
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 2; /* encima del GIF */
+  z-index: 2;
 }
 
-
 @media (max-width: 768px) {
-  .gif-portada {
-    max-width: 100%;
-    max-height: 50%;
-  }
-
   .flores-arriba,
   .flores-abajo {
-    max-height: 20%;
+    max-height: 30%; /* compactas en tablet */
+  }
+
+  .gif-portada {
+    max-width: 85%;
+    max-height: 45%;
   }
 }
 
 @media (max-width: 480px) {
+  .flores-arriba {
+    max-height: 28%; /* compactas en celular */
+  }
+  .flores-abajo {
+    max-height: 40%; /* compactas en celular */
+  }
+
   .gif-portada {
-    max-width: 100%;
+    max-width: 90%;
     max-height: 40%;
   }
-
-  .flores-arriba,
-  .flores-abajo {
-    max-height: 18%;
-  }
 }
-
-
 
 
