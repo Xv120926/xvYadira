@@ -21,6 +21,7 @@
   background-image: url("../assets/mariposas.png");
   background-position: center;
   background-repeat: repeat-x;
+  background-repeat: repeat-y;
   background-size: contain; /* mantiene proporción */
   background-attachment: fixed;
   background-blend-mode: normal;
@@ -31,6 +32,33 @@
   align-items: center;
   padding-bottom: 30px;
 }
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .seccion-con-fondo-mariposa {
+    height: 80vh; /* menos alto en pantallas medianas */
+    background-size: cover; /* llena mejor el espacio */
+    padding-bottom: 20px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .seccion-con-fondo-mariposa {
+    height: 100vh; /* ocupa toda la pantalla */
+    background-size: cover; /* ajusta la imagen */
+    background-attachment: scroll; /* evita problemas de rendimiento en móviles */
+    padding-bottom: 15px;
+  }
+
+  .seccion-con-fondo-mariposa h1,
+  .seccion-con-fondo-mariposa p {
+    font-size: 1.2rem; /* texto más pequeño */
+    text-align: center;
+  }
+}
+
 
 /* Tablets */
 @media (max-width: 768px) {
@@ -44,7 +72,7 @@
 /* Celulares */
 @media (max-width: 480px) {
   .seccion-con-fondo {
-    height: 100vh; /* ocupa toda la pantalla */
+    height: 90vh; /* ocupa toda la pantalla */
     background-size: cover; /* ajusta la imagen */
     padding-bottom: 15px;
   }
