@@ -41,7 +41,7 @@
   }
 
   .seccion-con-fondo-mariposa {
-    height: 80vh;
+    height: 100vh;
     background-repeat: repeat-y; /* en tablet se repite vertical */
     background-size: 150px auto; /* ajusta proporción */
     background-attachment: scroll; /* mejor rendimiento */
@@ -54,8 +54,9 @@
   .seccion-con-fondo {
     background-size: cover;
     background-attachment: scroll; /* mejor rendimiento en móviles */
-    height: 100vh;
+    height: 90vh;
     padding-bottom: 15px;
+
   }
 
   .seccion-con-fondo-mariposa {
