@@ -54,7 +54,7 @@
   .seccion-con-fondo {
     background-size: cover;
     background-attachment: scroll; /* mejor rendimiento en móviles */
-    height: 70vh;
+    height: 75vh;
     padding-bottom: 18px;
     padding-top: 5px;
 
