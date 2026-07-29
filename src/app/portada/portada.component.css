@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   background-color: #A88BD6;
-  background-image: url("/assets/portada2.png");
+  background-image: url("../../assets/portada2.png");
   background-repeat: no-repeat;
   background-position: left center; /* ajusta la posición */
   background-size: contain; /* evita que se agrande */
