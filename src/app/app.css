@@ -17,7 +17,7 @@
 
 .seccion-con-fondo-mariposa {
   width: 100%;
-  height: 100vh;
+  height: 91vh; /* ocupa toda la altura disponible */
   background-image: url("../assets/mariposas.png");
   background-position: center;
   background-repeat: repeat-x; /* en PC se repite horizontal */
@@ -31,25 +31,85 @@
 
   justify-content: center;   /* centra horizontalmente */
   align-items: flex-start;   /* coloca el contenido arriba */
-  height: 100%;              /* ocupa toda la altura disponible */
   padding-top: 30px;         /* espacio desde arriba */
 }
 
 .seccion-con-fondo_2 {
   width: 100%;
-  height: 82vh; /* ocupa toda la pantalla en PC */
-  background-image: url("../assets/fotobebe.jpeg");
+  height: 80vh; /* ocupa toda la pantalla en PC */
+  background-image: url("../assets/fotobebe.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain; /* mantiene proporción */
   background-attachment: fixed;
   background-blend-mode: normal;
+  background-attachment: scroll; /* mejor en móviles */
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* texto al fondo */
   align-items: center;
   padding-bottom: 5px;
+}
+
+/* Padrinos */
+.seccion-padrinos-portada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* se acomoda en móviles */
+  padding: 15px;
+}
+
+.imagen-portada {
+  max-width: 45%;   /* ocupa menos de la mitad del ancho */
+  max-height: 98vh; /* altura máxima relativa al alto de la pantalla */
+  height: auto;
+  border-radius: 2em; /* esquinas redondeadas con unidad relativa */
+  object-fit: cover;  /* recorta suavemente si excede */
+}
+
+.contenedor-padrinos-flex {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.columna p {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #4a3c2a;
+}
+
+.imagen-centro img {
+  max-width: 100px;
+}
+
+/* 📱 Ajuste para celulares y tablets */
+@media (max-width: 1024px) {
+  .seccion-padrinos-portada {
+    flex-direction: column; /* apila imagen y texto */
+    gap: 20px;
+  }
+
+  .imagen-portada {
+    max-width: 80%;   /* más ancho en pantallas pequeñas */
+    max-height: 40vh; /* altura proporcional más compacta */
+  }
+
+  .contenedor-padrinos-flex {
+    flex-direction: column;
+  }
+
+  .imagen-centro img {
+    margin: 15px 0;
+  }
 }
 
 /* Ajustes para tablet */
@@ -60,13 +120,7 @@
     padding-bottom: 20px;
   }
 
-  .seccion-con-fondo-mariposa {
-    height: 100vh;
-    background-repeat: repeat-y; /* en tablet se repite vertical */
-    background-size: 150px auto; /* ajusta proporción */
-    background-attachment: scroll; /* mejor rendimiento */
-    padding-bottom: 20px;
-  }
+
 }
 
 /* Ajustes para celular */
@@ -98,6 +152,12 @@
   .seccion-con-fondo-mariposa p {
     font-size: 1.2rem;
     text-align: center;
+  }
+  .seccion-con-fondo_2 {
+    height: auto;              /* deja que se ajuste a la imagen */
+    background-size: cover;    /* llena mejor la pantalla en móviles */
+    background-attachment: scroll; /* evita problemas en móviles */
+    padding-top: 10px;
   }
 }
 
@@ -223,6 +283,17 @@
   .caja p {
     font-size: 0.8rem;
   }
+  .texto-invitacion {
+    max-width: 95%;          /* más ancho en pantallas pequeñas */
+    font-size: 1rem;         /* texto más compacto */
+    padding: 10px;
+  }
+  .texto-invitacion p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+
 }
 
 
