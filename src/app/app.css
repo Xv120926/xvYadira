@@ -27,9 +27,29 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
   padding-bottom: 30px;
+
+  justify-content: center;   /* centra horizontalmente */
+  align-items: flex-start;   /* coloca el contenido arriba */
+  height: 100%;              /* ocupa toda la altura disponible */
+  padding-top: 30px;         /* espacio desde arriba */
+}
+
+.seccion-con-fondo_2 {
+  width: 100%;
+  height: 82vh; /* ocupa toda la pantalla en PC */
+  background-image: url("../assets/fotobebe.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; /* mantiene proporción */
+  background-attachment: fixed;
+  background-blend-mode: normal;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* texto al fondo */
+  align-items: center;
+  padding-bottom: 5px;
 }
 
 /* Ajustes para tablet */
@@ -153,6 +173,24 @@
   margin: 0;
   font-size: 1rem;
   color: #333;
+}
+
+.texto-invitacion {
+  max-width: 70%;              /* ancho controlado para que no se vea muy largo */
+  margin: 0 auto;              /* centra el bloque */
+  padding: 20px;
+  background-color: #e2c8f7;   /* tono beige suave */
+  border-radius: 12px;         /* esquinas redondeadas */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* sombra elegante */
+  text-align: center;          /* centra el texto */
+}
+
+.texto-invitacion p {
+  font-family: 'Georgia', serif; /* tipografía con estilo clásico */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a3c2a;               /* tono marrón para contraste */
+  font-style: italic;           /* da un aire más sentimental */
 }
 
 /* Tablets */
