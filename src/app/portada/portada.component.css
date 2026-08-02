@@ -56,10 +56,12 @@
 
 @media (max-width: 480px) {
   .flores-arriba {
+    width: 100%;
     max-height: 28%; /* compactas en celular */
   }
   .flores-abajo {
-    max-height: 40%; /* compactas en celular */
+    width: 100%;
+    max-height: 50%; /* compactas en celular */
   }
 
   .gif-portada {
