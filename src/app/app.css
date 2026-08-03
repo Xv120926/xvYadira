@@ -94,23 +94,45 @@
 /* 📱 Ajuste para celulares y tablets */
 @media (max-width: 1024px) {
   .seccion-padrinos-portada {
-    flex-direction: column; /* apila imagen y texto */
-    gap: 20px;
+    flex-direction: row;        /* mantiene lado a lado */
+    justify-content: center;
+    align-items: stretch;       /* estira ambos bloques a la misma altura */
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 80vh;               /* altura relativa a la pantalla */
   }
 
   .imagen-portada {
-    max-width: 80%;   /* más ancho en pantallas pequeñas */
-    max-height: 40vh; /* altura proporcional más compacta */
+    flex: 1 1 50%;              /* ocupa mitad del ancho */
+    justify-content: space-between;
+    align-items: stretch;   /* estira hasta arriba y abajo */
+    width: 100%;
+    height: 100vh;          /* ocupa toda la pantalla */
+    object-fit: cover;          /* mantiene proporción */
+    border-radius: 2em;
   }
 
   .contenedor-padrinos-flex {
+    flex: 1 1 50%;              /* ocupa la otra mitad */
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;        /* centra nombres y flores */
+    text-align: center;
   }
 
   .imagen-centro img {
-    margin: 15px 0;
+    width: auto;
+    height: 100%;
+    transform: rotate(90deg); /* gira la imagen 90 grados */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
+
 }
+
+
 
 /* Ajustes para tablet */
 @media (max-width: 768px) {
@@ -141,11 +163,14 @@
     background-attachment: fixed;
     background-blend-mode: normal;
 
+    min-height: auto;       /* se adapta al contenido */
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 30px;
+
+    justify-content: flex-start;   /* centra horizontalmente */
+    align-items: flex-start;   /* coloca el contenido arriba */
+    padding-top: 10px;         /* espacio desde arriba */
   }
 
   .seccion-con-fondo-mariposa h1,
@@ -154,10 +179,14 @@
     text-align: center;
   }
   .seccion-con-fondo_2 {
-    height: auto;              /* deja que se ajuste a la imagen */
+    width: 100%;
+    height: 100vh; /* ocupa toda la pantalla en PC */
     background-size: cover;    /* llena mejor la pantalla en móviles */
     background-attachment: scroll; /* evita problemas en móviles */
     padding-top: 10px;
+
+    align-items: center;
+    padding-bottom: 5px;
   }
 }
 
@@ -284,9 +313,10 @@
     font-size: 0.8rem;
   }
   .texto-invitacion {
-    max-width: 95%;          /* más ancho en pantallas pequeñas */
-    font-size: 1rem;         /* texto más compacto */
-    padding: 10px;
+    max-width: 95%;
+    font-size: 1rem;
+    line-height: 1.4;
+
   }
   .texto-invitacion p {
     font-size: 1rem;
