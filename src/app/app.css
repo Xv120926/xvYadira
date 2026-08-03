@@ -179,14 +179,8 @@
     text-align: center;
   }
   .seccion-con-fondo_2 {
-    width: 100%;
-    height: 100vh; /* ocupa toda la pantalla en PC */
-    background-size: cover;    /* llena mejor la pantalla en móviles */
-    background-attachment: scroll; /* evita problemas en móviles */
-    padding-top: 10px;
-
-    align-items: center;
-    padding-bottom: 5px;
+    min-width: auto;
+    min-height: auto;       /* se adapta al contenido */
   }
 }
 
@@ -265,13 +259,14 @@
 }
 
 .texto-invitacion {
-  max-width: 70%;              /* ancho controlado para que no se vea muy largo */
-  margin: 0 auto;              /* centra el bloque */
+  max-width: 70%;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #e2c8f7;   /* tono beige suave */
-  border-radius: 12px;         /* esquinas redondeadas */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* sombra elegante */
-  text-align: center;          /* centra el texto */
+  background: rgba(255, 255, 255, 0.3); /* fondo claro semitransparente */
+  backdrop-filter: blur(6px);           /* difumina el fondo detrás */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .texto-invitacion p {
