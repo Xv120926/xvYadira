@@ -278,9 +278,9 @@
 }
 
 .texto-invitacion2 {
-  max-width: 70%;
+  max-width: 60%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.352); /* fondo claro semitransparente */
   backdrop-filter: blur(6px);           /* difumina el fondo detrás */
   border-radius: 12px;
@@ -291,7 +291,7 @@
 .texto-invitacion2 p{
   font-family: 'Georgia', serif; /* tipografía con estilo clásico */
   font-size: 1.2rem;
-  line-height: 1.8;
+  line-height: 0.8;
   color: #412f56;               /* tono marrón para contraste */
   font-style: italic;           /* da un aire más sentimental */
 }
@@ -309,19 +309,20 @@
   display: flex;
   flex-direction: column; /* ícono arriba, texto abajo */
   align-items: center;
-  margin: 20px 0;
-  padding: 10px;
+  margin: 1.2rem 0;       /* menos separación */
+  padding: 0.;
   position: relative;
 }
+
 
 .item-itinerario:not(:last-child)::after {
   content: "";
   position: absolute;
-  bottom: -20px;   /* espacio debajo del ítem */
-  left: 50%;       /* centrada */
+  bottom: -1rem;          /* línea más corta */
+  left: 50%;
   transform: translateX(-50%);
-  width: 2px;
-  height: 40px;    /* largo de la línea */
+  width: 0.12rem;
+  height: 2rem;           /* más compacta */
   background: #5d4c79;
 }
 
@@ -391,7 +392,7 @@
 
   .texto-invitacion2 p {
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: 1;
   }
 
   .texto-invitacion2 p.titulo-invitacion {
@@ -415,7 +416,7 @@
 @media (min-width: 48em) and (max-width: 64em) { /* ~769px a 1024px */
   .texto-invitacion2 {
     max-width: 85%;
-    padding: 1.8rem;
+    padding: 0.8rem;
   }
 
   .texto-invitacion2 p {
