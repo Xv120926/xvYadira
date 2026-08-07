@@ -277,6 +277,65 @@
   font-style: italic;           /* da un aire más sentimental */
 }
 
+.texto-invitacion2 {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.352); /* fondo claro semitransparente */
+  backdrop-filter: blur(6px);           /* difumina el fondo detrás */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.texto-invitacion2 p{
+  font-family: 'Georgia', serif; /* tipografía con estilo clásico */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #412f56;               /* tono marrón para contraste */
+  font-style: italic;           /* da un aire más sentimental */
+}
+
+.texto-invitacion2 p.titulo-invitacion {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  line-height: 1.8;
+  color: #412f56;
+  font-style: italic;
+  font-weight: bold; /* opcional para destacar más */
+}
+
+.item-itinerario {
+  display: flex;
+  flex-direction: column; /* ícono arriba, texto abajo */
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px;
+  position: relative;
+}
+
+.item-itinerario:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;   /* espacio debajo del ítem */
+  left: 50%;       /* centrada */
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;    /* largo de la línea */
+  background: #5d4c79;
+}
+
+
+.item-itinerario svg,
+.item-itinerario .icono {
+  flex-shrink: 0;
+  font-size: 2rem;
+  color: #4a3c2a;
+}
+
+.texto-evento {
+  text-align: left;
+}
 /* Tablets */
 @media (max-width: 768px) {
   .caja {
@@ -317,9 +376,66 @@
     font-size: 1rem;
     line-height: 1.4;
   }
-
-
 }
 
 
+
+/* 📱 Celulares */
+@media (max-width: 48em) { /* ~768px */
+  .texto-invitacion2 {
+    max-width: 65%;
+    height: 93%;
+    padding: 1.5rem;
+  }
+
+  .texto-invitacion2 p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .texto-invitacion2 p.titulo-invitacion {
+    font-size: 1.5rem;
+  }
+
+  .item-itinerario {
+    margin: 1.0rem 0;
+    padding: 0.8rem;
+  }
+
+  .item-itinerario svg,
+  .item-itinerario .icono {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* 📲 Tabletas */
+@media (min-width: 48em) and (max-width: 64em) { /* ~769px a 1024px */
+  .texto-invitacion2 {
+    max-width: 85%;
+    padding: 1.8rem;
+  }
+
+  .texto-invitacion2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .texto-invitacion2 p.titulo-invitacion {
+    font-size: 1.8rem;
+  }
+
+  .item-itinerario {
+    margin: 1.8rem 0;
+    padding: 1rem;
+  }
+
+  .item-itinerario svg,
+  .item-itinerario .icono {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.8rem;
+  }
+}
 
