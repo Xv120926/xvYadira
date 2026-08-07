@@ -334,7 +334,7 @@
 }
 
 .texto-evento {
-  text-align: left;
+  text-align: center;
 }
 /* Tablets */
 @media (max-width: 768px) {
@@ -384,8 +384,9 @@
 @media (max-width: 48em) { /* ~768px */
   .texto-invitacion2 {
     max-width: 65%;
-    height: 93%;
-    padding: 1.5rem;
+    max-height: 93%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .texto-invitacion2 p {
