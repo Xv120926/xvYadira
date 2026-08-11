@@ -77,8 +77,6 @@ height: 140px;
 margin-top: -10px;
 z-index: 1;
 }
-.flores-bottom-bg { width: 100%; height: 100%; background-image: url('/assets/flores-arriba.png'); background-size: contain; background-position: center bottom; background-repeat: no-repeat; }
-
 .swipe-hint { font-size: 2.5rem; color: white; animation: bounce 1.5s infinite; z-index: 2; margin-top: 15px; }
 @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 
