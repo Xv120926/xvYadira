@@ -69,16 +69,6 @@ margin-top: -10vh;
 
 .swipe-text { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: white; margin: 10px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
 
-.polaroid-collage {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 12px;
-width: 90%;
-max-width: 320px;
-z-index: 2;
-margin: 15px 0;
-}
-
 .flores-bottom-wrapper {
 position: relative;
 width: 100%;
@@ -88,7 +78,6 @@ margin-top: -10px;
 z-index: 1;
 }
 .flores-bottom-bg { width: 100%; height: 100%; background-image: url('/assets/flores-arriba.png'); background-size: contain; background-position: center bottom; background-repeat: no-repeat; }
-.quinceanera-back { position: absolute; bottom: 0px; right: 0px; width: 110px; height: auto; z-index: 3; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3)); }
 
 .swipe-hint { font-size: 2.5rem; color: white; animation: bounce 1.5s infinite; z-index: 2; margin-top: 15px; }
 @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
@@ -268,9 +257,7 @@ backdrop-filter: blur(2px);
 /* --- RESPONSIVE EXTREMO --- */
 @media (min-width: 768px) {
 .section-block { padding: 60px 20px; }
-.polaroid-collage { max-width: 450px; gap: 15px; }
 .polaroid img { height: 120px; }
-.quinceanera-back { width: 150px; right: 10px; }
 .main-photo-box { max-width: 450px; }
 .quote-box { max-width: 600px; }
 .quote-text { font-size: 2.5rem; }
@@ -281,11 +268,9 @@ backdrop-filter: blur(2px);
 
 @media (max-width: 480px) {
 .swipe-text { font-size: 1.8rem; }
-.polaroid-collage { gap: 8px; }
 .polaroid img { height: 70px; }
 .polaroid { padding: 4px 4px 15px 4px; }
 .flores-bottom-wrapper { height: 120px; }
-.quinceanera-back { width: 90px; bottom: 5px; right: 5px; }
 .main-photo-box h1 { font-size: 2.2rem; }
 .countdown-box { width: 45px; font-size: 1.2rem; }
 
