@@ -56,16 +56,21 @@ padding: 30px 15px;
 }
 
 .marco-floral-container {
-position: relative;
+position: absolute;
 width: 100%;
 max-width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
 height: auto;
-
+align-content: center;
 margin-top: -10vh;
 }
+
+ .marco-floral-container img {
+    width: 100%;                /* 🔥 ocupa todo el ancho */
+    height: auto;
+  }
 
 .swipe-text { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: white; margin: 10px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
 
@@ -300,6 +305,23 @@ backdrop-filter: blur(2px);
 /* --- RESPONSIVE EXTREMO --- */
 @media (min-width: 768px) {
 .section-block { padding: 60px 20px; }
+.marco-floral-container {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;          /* 🔥 límite de ancho */
+    display: flex;
+    flex-direction: column;        /* 🔥 en fila */
+    align-items: center;
+    justify-content: center;    /* centra horizontalmente */
+    height: auto;
+    margin-top: -10vh;
+    padding: 20px;
+  }
+
+  .marco-floral-container img {
+    max-width: 80%;             /* 🔥 más compacto en desktop */
+    height: auto;
+  }
 .polaroid img { height: 120px; }
 .main-photo-box { max-width: 450px; }
 .quote-box { max-width: 600px; }
@@ -362,6 +384,23 @@ backdrop-filter: blur(2px);
 .polaroid img { height: 50px; }
 .polaroid { padding: 4px 4px 14px 4px; }
 .flores-bottom-wrapper { height: 120px; }
+.marco-floral-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;     /* 🔥 todo en columna */
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-top: -5vh;           /* menos margen en móvil */
+    padding: 10px;              /* espacio interno */
+  }
+
+  .marco-floral-container img {
+    width: 100%;                /* 🔥 ocupa todo el ancho */
+    height: auto;
+  }
 .main-photo-box h1 { font-size: 2.2rem; }
 .countdown-box { width: 45px; font-size: 1.2rem; }
 
