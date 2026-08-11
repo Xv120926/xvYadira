@@ -366,7 +366,7 @@ backdrop-filter: blur(2px);
     max-width: 80%;             /* 🔥 más compacto en desktop */
     height: auto;
   }
-.polaroid img { height: 120px;  margin-top: -50vh;}
+.polaroid img { height: 120px;}
 .main-photo-box { max-width: 450px; }
 .quote-box { max-width: 600px; }
 .quote-text { font-size: 2.5rem; }
