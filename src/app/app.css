@@ -233,7 +233,7 @@ font-family: 'Montserrat', sans-serif;
 /* --- 4. BLOQUE DE PADRINOS --- */
 .padrinos-block {
   background-color: "--lila-fondo";
-  padding: 40px 20px;
+  padding: 20px 40px;
   display: flex;              /* 🔥 importante: activa flexbox */
   flex-direction: row;        /* imagen a la izquierda, texto a la derecha */
   justify-content: flex-start;
@@ -243,7 +243,7 @@ font-family: 'Montserrat', sans-serif;
 
 .padrinos-container {
 display: flex;
-max-width: 600px;
+max-width: 400px;
 width: 100%;
 align-items: center;
 justify-content: center;
@@ -362,25 +362,23 @@ backdrop-filter: blur(2px);
 
 /* --- RESPONSIVE EXTREMO --- */
 @media (min-width: 768px) {
-.section-block { padding: 60px 20px; }
+.section-block { padding: 1px 0 }
 .marco-floral-container {
     position: relative;
     width: 100%;
-    max-width: 1500px;          /* 🔥 límite de ancho */
+    max-width: 1200px;          /* 🔥 límite de ancho */
     display: flex;
     flex-direction: column;        /* 🔥 en fila */
-    align-items: center;
-    justify-content: center;    /* centra horizontalmente */
+    align-items: center;    /* centra horizontalmente */
     height: auto;
-    margin-top: -10vh;
-    padding: 20px;
+    margin-top: 1vh;
   }
 
   .marco-floral-container img {
-    max-width: 80%;             /* 🔥 más compacto en desktop */
+    max-width: 80%;          /* 🔥 más compacto en desktop */
     height: auto;
   }
-.polaroid img { height: 120px;}
+.polaroid img { height: 120px; padding: 10vh 0 ;}
 .main-photo-box { max-width: 450px; }
 .quote-box { max-width: 600px; }
 .quote-text { font-size: 2.5rem; }
@@ -389,20 +387,20 @@ backdrop-filter: blur(2px);
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
 
   .padrinos-flowers {
-    width: 35%;
+    width: 55%;
     margin-top: 0;
-    margin-left: -30;
+    margin-left: -60vh;
     display: flex;
     justify-content: flex-start;
   }
 
   .padrinos-text-wrapper {
     font-size: 1.3rem;
-    width: 65%;
+    width: 75%;
   }
 
   .quote-block2 {
@@ -438,21 +436,21 @@ backdrop-filter: blur(2px);
 }
 
 @media (max-width: 480px) {
-.swipe-text { font-size: 1.8rem;  margin-top: -10vh;}
-.polaroid img { height: 50px; margin-top: -28vh;}
+.swipe-text { font-size: 1.8rem;  margin-top: -5vh;}
+.polaroid img { height: 50px; margin-top: -15vh;}
 .polaroid { padding: 4px 4px 14px 4px; }
-.flores-bottom-wrapper { height: 120px; }
+.flores-bottom-wrapper { height: 100px; }
 .marco-floral-container {
     position: relative;
     width: 100%;
-    max-width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: auto;
-    margin-top: -5vh;
-    padding: 10px;
+    margin-top: -9vh;
+    padding: 5px;
   }
 
   .marco-floral-container img {
@@ -460,8 +458,8 @@ backdrop-filter: blur(2px);
     height: auto;
   }
   .marco-floral-container-down {
-    margin-top: -48vh;   /* 🔥 más cerca del GIF en celular */
-    max-width: 100%;      /* ocupa casi todo el ancho */
+    margin-top: -38vh;   /* 🔥 más cerca del GIF en celular */
+    max-width: 110%;      /* ocupa casi todo el ancho */
   }
 .main-photo-box h1 { font-size: 2.2rem; }
 .countdown-box { width: 45px; font-size: 1.2rem; }
@@ -470,7 +468,7 @@ backdrop-filter: blur(2px);
   .padrinos-container { position: fixed; margin-bottom: 20px; width: 80%; margin-left: -15vh; }
 
   .padrinos-flowers {
-    width: 100%;
+    width: 80%;
     height: 105vh;
     overflow: hidden;
     position: relative;
