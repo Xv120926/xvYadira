@@ -127,7 +127,7 @@ font-weight: bold;
 /* --- 3. BLOQUE DE FRASE CON POLAROID Y MARIPOSAS --- */
 .quote-block {
 background-color: "--lila-fondo";
-background-image: url("/assets/mariposas.png");
+background-image: url("../assets/mariposas.png");
 background-size: cover;
 background-position: center;
 flex-direction: column;
