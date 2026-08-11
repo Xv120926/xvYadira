@@ -1,138 +1,122 @@
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <!-- Seccion se gift -->
-    <div class="swiper-slide">
-       <app-portada></app-portada>
-    </div>
-    <!-- foto con contador -->
-      <div class="swiper-slide">
-        <div class="seccion-con-fondo"></div>
-        <div id="contador" class="contador">
-            <div class="caja">
-              <span id="dias">0</span>
-              <p>Días</p>
-            </div>
-            <div class="caja">
-              <span id="horas">0</span>
-              <p>Horas</p>
-            </div>
-            <div class="caja">
-              <span id="minutos">0</span>
-              <p>Minutos</p>
-            </div>
-            <div class="caja">
-              <span id="segundos">0</span>
-              <p>Segundos</p>
-            </div>
-          </div>
-      </div>
-    <!-- Seccion fondo con Mariposas -->
-    <div class="swiper-slide">
-      <div class="seccion-con-fondo-mariposa">
-        <div class="texto-invitacion">
-          <p>
-            Gracias señor por haberme permitido llegar a este día tan importante a mi madre , hermano y familiares ,
-            por medio de los cuales he aprendido a conocerte y a marte llena de ilusiones y alegre empiezo hoy una etapa de mi vida
-          </p>
-        </div>
-        <br>
-        <div class="seccion-con-fondo_2"></div>
-        <br><br><br><br>
-      </div>
-    </div>
 
-    <!-- Sección con padrinos/mamá -->
-  <div class="swiper-slide">
-    <div class="seccion-padrinos-portada">
-      <img src="assets/portada2.png" alt="Flores" class="imagen-portada">
-      <div class="contenedor-padrinos-flex">
-        <div class="columna">
-          <p>Mi mamá</p>
-          <p>Angélica Luna Nava</p>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="scroll-container">
+
+        <!-- BLOQUE 1: PORTADA -->
+        <div class="section-block cover-block" (click)="openInvitation()">
+            <div class="marco-floral-container">
+                <div><img src="/assets/flores-arriba.png"></div>
+                <div class="swipe-text">Desliza para seguir</div>
+
+                <div>
+                    <!-- CAMBIA LAS URL DE LAS IMÁGENES -->
+                    <div class="polaroid"><img src="/assets/portadaGift.gif" alt="Foto 1"></div>
+                </div>
+
+                <div><img src="/assets/flores-abajo.png"></div>
+                <div class="swipe-hint">↓</div>
+            </div>
         </div>
 
-        <div class="imagen-centro">
-          <img src="assets/tiraFlores.png" alt="Imagen decorativa">
+        <!-- BLOQUE 2: IMAGEN Y CONTADOR -->
+        <div class="section-block info-block">
+            <div class="main-photo-box">
+                <!-- CAMBIA POR LA FOTO PRINCIPAL -->
+                <img src="/assets/yadis-count.png" alt="Festejada" class="main-photo">
+                <div class="text-overlay">
+                    <h1>Mis XV Años</h1>
+                    <h1>Yadira</h1>
+                    <!-- Sección del Contador en el HTML -->
+                    <div class="countdown-container">
+                        <div>
+                            <div class="countdown-box">{{ dias }}</div>
+                            <span class="countdown-label">Días</span>
+                        </div>
+                        <div>
+                            <div class="countdown-box">{{ horas }}</div>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                        <div>
+                            <div class="countdown-box">{{ minutos }}</div>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                        <div>
+                            <div class="countdown-box">{{ segundos }}</div>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="columna">
-          <p>Mis padrinos</p>
-          <p>Víctor Luna Nava</p>
-          <p>Eva Rodríguez Herrera</p>
+        <!-- BLOQUE 3: FRASE CON POLAROID Y MARIPOSAS -->
+        <div class="section-block quote-block">
+            <div class="quote-box">
+                <div class="quote-text">
+                    "Gracias señor por haberme permitido llegar a este día tan importante, a mi madre , hermano y familiares, por medio de los cuales he aprendido a conocerte y a amarte, llena de ilusiones y alegre empiezo hoy una nueva etapa de mi vida"
+                    <div class="quote-author">- Yadira</div>
+                </div>
+
+                <div class="quote-polaroid">
+                    <!-- CAMBIA POR LA FOTO DE LA POLAROID DE LA FRASE -->
+                    <img src="/assets/yadisbb.jpeg" alt="Foto recuerdo">
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- BLOQUE 4: PADRINOS -->
+        <div class="section-block padrinos-block">
+            <div class="padrinos-container">
+                <div class="padrinos-flowers"><img src="/assets/portada2.png" alt=""></div>
+                <div class="padrinos-text-wrapper">
+                    <div class="padrinos-left">
+                        <span class="padrinos-title">Mi mamá</span>
+                        <span class="padrinos-name">Angélica Luna Nava</span>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="padrinos-right">
+                        <span class="padrinos-title">Mis padrinos</span>
+                        <span class="padrinos-name">Víctor Luna Nava</span>
+                        <span class="padrinos-name">Eva Rodríguez Herrera</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE 5: ITINERARIO -->
+        <div class="section-block itinerary-block">
+            <div class="itinerary-content">
+                <h2 class="itinerary-title">Itinerario</h2>
+                <div class="timeline-item">
+                    <div class="timeline-icon">⛪</div>
+                    <div class="timeline-text">Ceremonia</div>
+                    <div class="timeline-time">16:00 hrs.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">📅</div>
+                    <div class="timeline-text">Recepción</div>
+                    <div class="timeline-time">17:30 hrs.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">🍽️</div>
+                    <div class="timeline-text">Cena</div>
+                    <div class="timeline-time">18:00 hrs.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">🎉</div>
+                    <div class="timeline-text">Vals</div>
+                    <div class="timeline-time">21:00 hrs.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE 6: MAPA -->
+        <div class="section-block map-block">
+            <div class="map-box">
+                <h2>Ubicación</h2>
+                <div class="map-container">
+                    <a href="https://maps.app.goo.gl/k8X1VbcpgaEmBhCH9?g_st=aw" target="_blank" class="map-button">Abrir en Google Maps</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-<!-- Sección de itinerario -->
-<div class="swiper-slide">
-  <div class="texto-invitacion2">
-    <p class="titulo-invitacion">Itinerario</p>
-
-    <div class="item-itinerario">
-      <!-- Iglesia -->
-      <span>
-        <svg xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-        width="50" height="50"
-        fill="none" stroke="#4a3c2a" stroke-width="2">
-        <rect x="16" y="28" width="32" height="28" />
-        <path d="M16 28 L32 12 L48 28 Z" />
-        <rect x="28" y="40" width="8" height="16" />
-        <line x1="32" y1="12" x2="32" y2="4" />
-        <line x1="28" y1="8" x2="36" y2="8" />
-      </svg>
-      </span>
-      <div class="texto-evento">
-        <p>Ceremonia Religiosa</p>
-        <p>16:00 hrs.</p>
-      </div>
-    </div>
-
-    <div class="item-itinerario">
-      <!-- Recepción (ejemplo con emoji, puedes cambiar a SVG) -->
-      <span class="icono">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="#4a3c2a" stroke-width="2">
-          <rect x="12" y="16" width="40" height="36"/>
-          <line x1="12" y1="24" x2="52" y2="24"/>
-          <line x1="20" y1="8" x2="20" y2="16"/>
-          <line x1="44" y1="8" x2="44" y2="16"/>
-        </svg>
-
-      </span>
-      <div class="texto-evento">
-        <p>Recepción</p>
-        <p>17:30 hrs.</p>
-      </div>
-    </div>
-
-    <div class="item-itinerario">
-      <span class="icono">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" fill="none" stroke="#4a3c2a" stroke-width="2">
-          <!-- tenedor -->
-          <line x1="20" y1="8" x2="20" y2="40"/>
-          <line x1="16" y1="8" x2="16" y2="20"/>
-          <line x1="24" y1="8" x2="24" y2="20"/>
-          <!-- cuchillo -->
-          <line x1="40" y1="8" x2="40" y2="40"/>
-        </svg>
-
-      </span>
-      <div class="texto-evento">
-        <p>Cena</p>
-        <p>18:00 hrs.</p>
-      </div>
-    </div>
-
-    <div class="item-itinerario">
-      <span class="icono">💃</span>
-      <div class="texto-evento">
-        <p>Vals</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <div class="swiper-pagination"></div>
-</div>

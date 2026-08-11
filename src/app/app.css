@@ -1,443 +1,301 @@
-.seccion-con-fondo {
+:root {
+--lila-fondo: #9F7EBE;
+--lila-oscuro: #4D2A63;
+--lila-medio: #CBB5D9;
+--blanco: #ffffff;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: #F4F0F9;
+overflow-x: hidden;
+}
+
+/* --- SISTEMA DE SCROLL CON ANIMACIONES --- */
+.scroll-container {
+width: 100%;
+overflow-x: hidden;
+height: 100vh;        /* ocupa toda la pantalla */
+overflow-y: auto;     /* permite hacer scroll vertical */
+scroll-snap-type: y mandatory; /* opcional: hace que cada sección se "pegue" al viewport */
+
+}
+
+.section-block {
+width: 100%;
+min-height: 100vh; /* Ocupa al menos toda la pantalla */
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 40px 20px;
+position: relative;
+/* Animación inicial (oculto) */
+opacity: 0;
+transform: translateY(50px);
+transition: all 1s ease-out;
+scroll-snap-align: start; /* opcional: cada bloque se alinea al inicio al hacer scroll */
+}
+
+/* Clase que se activa con JavaScript para mostrar el bloque */
+.section-block.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* --- 1. BLOQUE DE INICIO (DESLIZA) --- */
+.cover-block {
+background-color: var(--lila-fondo);
+flex-direction: column;
+padding: 30px 15px;
+}
+
+.marco-floral-container {
+position: relative;
+width: 100%;
+max-width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+height: auto;
+
+margin-top: -10vh;
+}
+
+.swipe-text { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: white; margin: 10px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+.polaroid-collage {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+width: 90%;
+max-width: 320px;
+z-index: 2;
+margin: 15px 0;
+}
+
+.flores-bottom-wrapper {
+position: relative;
+width: 100%;
+max-width: 350px;
+height: 140px;
+margin-top: -10px;
+z-index: 1;
+}
+.flores-bottom-bg { width: 100%; height: 100%; background-image: url('/assets/flores-arriba.png'); background-size: contain; background-position: center bottom; background-repeat: no-repeat; }
+.quinceanera-back { position: absolute; bottom: 0px; right: 0px; width: 110px; height: auto; z-index: 3; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3)); }
+
+.swipe-hint { font-size: 2.5rem; color: white; animation: bounce 1.5s infinite; z-index: 2; margin-top: 15px; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+
+/* --- 2. BLOQUE DE IMAGEN Y CONTADOR --- */
+.info-block {
+background-color: "--lila-fondo";
+flex-direction: column;
+padding: 20px;
+}
+
+.main-photo-box {
+background: white;
+padding: 15px 15px 25px 15px;
+border-radius: 20px;
+max-width: 350px;
+width: 100%;
+box-shadow: 0 4px 20px rgba(123, 90, 138, 0.15);
+text-align: center;
+}
+.main-photo { width: 100%; border-radius: 15px; margin-bottom: 15px; }
+.text-overlay h1 { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--lila-oscuro); margin: 5px 0; line-height: 1.1; }
+.date-text { font-size: 1.1rem; color: #8E6EA9; margin-bottom: 15px; font-weight: 500; }
+
+.countdown-container {
+display: flex;
+justify-content: space-between;
+background: #E6DEF0;
+padding: 15px;
+border-radius: 15px;
+margin-top: 10px;
+}
+.countdown-box {
+background: #CBB5D9;
+padding: 8px 5px;
+border-radius: 10px;
+width: 50px;
+color: var(--lila-oscuro);
+font-size: 1.5rem;
+font-weight: bold;
+}
+.countdown-label { font-size: 0.7rem; color: var(--lila-oscuro); margin-top: 5px; display: block; font-weight: 600; }
+
+/* --- 3. BLOQUE DE FRASE CON POLAROID Y MARIPOSAS --- */
+.quote-block {
+background-color: "--lila-fondo";
+background-image: url("/assets/mariposas.png");
+background-size: cover;
+background-position: center;
+flex-direction: column;
+padding: 30px 20px;
+}
+
+.quote-box {
+  display: contents;
+  max-width: 95%;
   width: 100%;
-  height: 82vh; /* ocupa toda la pantalla en PC */
-  background-image: url("../assets/fondoletras2.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain; /* mantiene proporción */
-  background-attachment: fixed;
-  background-blend-mode: normal;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* texto al fondo */
-  align-items: center;
-  padding-bottom: 5px;
+  text-align: center;
 }
 
-.seccion-con-fondo-mariposa {
-  width: 100%;
-  height: 91vh; /* ocupa toda la altura disponible */
-  background-image: url("../assets/mariposas.png");
-  background-position: center;
-  background-repeat: repeat-x; /* en PC se repite horizontal */
-  background-size: auto;       /* mantiene tamaño original */
-  background-attachment: fixed;
-  background-blend-mode: normal;
-
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 30px;
-
-  justify-content: center;   /* centra horizontalmente */
-  align-items: flex-start;   /* coloca el contenido arriba */
-  padding-top: 30px;         /* espacio desde arriba */
-}
-
-.seccion-con-fondo_2 {
-  width: 100%;
-  height: 80vh; /* ocupa toda la pantalla en PC */
-  background-image: url("../assets/fotobebe.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain; /* mantiene proporción */
-  background-attachment: fixed;
-  background-blend-mode: normal;
-  background-attachment: scroll; /* mejor en móviles */
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* texto al fondo */
-  align-items: center;
-  padding-bottom: 5px;
-}
-
-/* Padrinos */
-.seccion-padrinos-portada {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap; /* se acomoda en móviles */
-  padding: 15px;
-}
-
-.imagen-portada {
-  max-width: 45%;   /* ocupa menos de la mitad del ancho */
-  max-height: 98vh; /* altura máxima relativa al alto de la pantalla */
-  height: auto;
-  border-radius: 2em; /* esquinas redondeadas con unidad relativa */
-  object-fit: cover;  /* recorta suavemente si excede */
-}
-
-.contenedor-padrinos-flex {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  gap: 30px;
-  flex: 1;
-  flex-wrap: wrap;
-  text-align: left;
-}
-
-.columna p {
-  font-family: 'Georgia', serif;
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #4a3c2a;
-}
-
-.imagen-centro img {
-  max-width: 100px;
-}
-
-/* 📱 Ajuste para celulares y tablets */
-@media (max-width: 1024px) {
-  .seccion-padrinos-portada {
-    flex-direction: row;        /* mantiene lado a lado */
-    justify-content: center;
-    align-items: stretch;       /* estira ambos bloques a la misma altura */
-    gap: 10px;
-    flex-wrap: wrap;
-    height: 80vh;               /* altura relativa a la pantalla */
-  }
-
-  .imagen-portada {
-    flex: 1 1 50%;              /* ocupa mitad del ancho */
-    justify-content: space-between;
-    align-items: stretch;   /* estira hasta arriba y abajo */
-    width: 100%;
-    height: 100vh;          /* ocupa toda la pantalla */
-    object-fit: cover;          /* mantiene proporción */
-    border-radius: 2em;
-  }
-
-  .contenedor-padrinos-flex {
-    flex: 1 1 50%;              /* ocupa la otra mitad */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;        /* centra nombres y flores */
-    text-align: center;
-  }
-
-  .imagen-centro img {
-    width: auto;
-    height: 100%;
-    transform: rotate(90deg); /* gira la imagen 90 grados */
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-  }
-
-}
-
-
-
-/* Ajustes para tablet */
-@media (max-width: 768px) {
-  .seccion-con-fondo {
-    background-size: cover;
-    height: 100vh;
-    padding-bottom: 20px;
-  }
-
-
-}
-
-/* Ajustes para celular */
-@media (max-width: 480px) {
-  .seccion-con-fondo {
-    background-size: cover;
-    background-attachment: scroll; /* mejor rendimiento en móviles */
-    height: 75vh;
-    padding-bottom: 18px;
-    padding-top: 5px;
-
-  }
-
-  .seccion-con-fondo-mariposa {
-    background-repeat: repeat; /* en celular se repite vertical */
-    background-size: 100px auto; /* patrón más compacto */
-    background-size: auto;       /* mantiene tamaño original */
-    background-attachment: fixed;
-    background-blend-mode: normal;
-
-    min-height: auto;       /* se adapta al contenido */
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;   /* centra horizontalmente */
-    align-items: flex-start;   /* coloca el contenido arriba */
-    padding-top: 10px;         /* espacio desde arriba */
-  }
-
-  .seccion-con-fondo-mariposa h1,
-  .seccion-con-fondo-mariposa p {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  .seccion-con-fondo_2 {
-    min-width: auto;
-    min-height: auto;       /* se adapta al contenido */
-  }
-}
-
-
-/* Tablets */
-/* @media (max-width: 768px) {
-  .seccion-con-fondo {
-    height: 80vh;
-    background-size: cover;
-    padding-bottom: 20px;
-  }
-}*/
-
-/* Celulares */
-/* @media (max-width: 480px) {
-  .seccion-con-fondo {
-    height: 100vh;
-    background-size: cover;
-    padding-bottom: 15px;
-  } */
-
-  /* .seccion-con-fondo h1,
-  .seccion-con-fondo p {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-}  */
-
-.texto-portada {
-  color: white;
+.quote-text {
+  font-family: 'Great Vibes', cursive;
   font-size: 2rem;
-  text-align: center;
-  background: rgba(182, 122, 255, 0.4); /* opcional: fondo semitransparente */
-  position: absolute;
-  bottom: 20px;   /* distancia desde el borde inferior */
-
-}
-.texto-grande {
-  color: white;
-  font-size: 3rem;
-  text-align: center;
-  background: rgba(182, 122, 255, 0.4); /* opcional: fondo semitransparente */
-  padding: 5px 10px;
-  border-radius: 8px;
-}
-
-
-/*Apartado del conteo regresivo de la fecha*/
-.contador {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 5px;
+  line-height: 1.6;              /* 🔥 más espacio entre líneas */
+  color: var(--lila-oscuro);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 30px 25px;            /* 🔥 más padding para que se vea más largo */
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
   margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  min-height: 220px;             /* 🔥 fuerza altura mínima */
 }
 
-.caja {
-  background-color: #c9a9e6; /* tu color lila */
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  min-width: 80px;
+.quote-author {
+margin-top: 5px;
+font-weight: bold;
+color: var(--lila-oscuro);
+font-family: 'Montserrat', sans-serif;
 }
 
-.caja span {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #5a3d85; /* tono más oscuro para contraste */
-}
-
-.caja p {
-  margin: 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-.texto-invitacion {
-  max-width: 70%;
+.quote-polaroid {
+  background: white;
+  padding: 12px 12px 40px 12px;  /* 🔥 más espacio abajo para alargar el marco */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: rotate(3deg);
+  max-width: 350px;              /* un poco más ancha */
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.3); /* fondo claro semitransparente */
-  backdrop-filter: blur(6px);           /* difumina el fondo detrás */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-.texto-invitacion p {
-  font-family: 'Georgia', serif; /* tipografía con estilo clásico */
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #4a3c2a;               /* tono marrón para contraste */
-  font-style: italic;           /* da un aire más sentimental */
-}
-
-.texto-invitacion2 {
-  max-width: 60%;
-  margin: 0 auto;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.352); /* fondo claro semitransparente */
-  backdrop-filter: blur(6px);           /* difumina el fondo detrás */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-.texto-invitacion2 p{
-  font-family: 'Georgia', serif; /* tipografía con estilo clásico */
-  font-size: 1.2rem;
-  line-height: 0.8;
-  color: #412f56;               /* tono marrón para contraste */
-  font-style: italic;           /* da un aire más sentimental */
-}
-
-.texto-invitacion2 p.titulo-invitacion {
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  line-height: 1.8;
-  color: #412f56;
-  font-style: italic;
-  font-weight: bold; /* opcional para destacar más */
-}
-
-.item-itinerario {
+  border-radius: 4px;
+  min-height: 360px;             /* 🔥 fuerza altura mínima de la polaroid */
   display: flex;
-  flex-direction: column; /* ícono arriba, texto abajo */
   align-items: center;
-  margin: 1.2rem 0;       /* menos separación */
-  padding: 0.;
-  position: relative;
+  justify-content: center;
+}
+.quote-polaroid img { width: 100%; height: auto; border-radius: 4px; display: block; }
+
+/* --- 4. BLOQUE DE PADRINOS --- */
+.padrinos-block {
+background-color: #9C73C2;
+padding: 40px 20px;
+flex-direction: column;
 }
 
-
-.item-itinerario:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  bottom: -1rem;          /* línea más corta */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0.12rem;
-  height: 2rem;           /* más compacta */
-  background: #5d4c79;
+.padrinos-container {
+display: flex;
+flex-direction: row;
+max-width: 600px;
+width: 100%;
+align-items: center;
+justify-content: center;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 30px;
+padding: 20px 10px;
+backdrop-filter: blur(2px);
 }
 
-
-.item-itinerario svg,
-.item-itinerario .icono {
-  flex-shrink: 0;
-  font-size: 2rem;
-  color: #4a3c2a;
+.padrinos-flowers {
+width: 25%;
+height: 200px;
+background-image: url("/assets/portada2.png");
+background-size: contain;
+background-position: left center;
+background-repeat: no-repeat;
 }
 
-.texto-evento {
-  text-align: center;
-}
-/* Tablets */
-@media (max-width: 768px) {
-  .caja {
-    min-width: 70px;
-    padding: 10px;
-  }
-  .caja span {
-    font-size: 1.5rem;
-  }
-  .caja p {
-    font-size: 0.9rem;
-  }
+.padrinos-text-wrapper {
+width: 75%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+color: var(--lila-oscuro);
+font-family: 'Montserrat', sans-serif;
+padding: 10px;
 }
 
-/* Celulares */
+.padrinos-left { text-align: right; padding-right: 15px; width: 45%; }
+.divider-line { width: 2px; height: 80px; background: repeating-linear-gradient(to bottom, #e0cfe8, #e0cfe8 5px, transparent 5px, transparent 10px); }
+.padrinos-right { text-align: left; padding-left: 15px; width: 45%; }
+
+.padrinos-title { font-size: 0.9rem; font-weight: 400; color: #38204a; margin-bottom: 2px; display: block; }
+.padrinos-name { font-weight: 600; color: #220d30; margin-bottom: 8px; display: block; font-size: 0.95rem; }
+
+/* --- 5. BLOQUE DE ITINERARIO --- */
+.itinerary-block {
+background-color: #9171B3;
+flex-direction: column;
+padding: 40px 20px;
+}
+
+.itinerary-content {
+max-width: 400px;
+width: 100%;
+text-align: center;
+color: white;
+background: rgba(255,255,255,0.1);
+padding: 30px 20px;
+border-radius: 30px;
+backdrop-filter: blur(2px);
+}
+
+.itinerary-title { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-bottom: 20px; color: white; }
+.timeline-item { margin: 25px 0; color: white; }
+.timeline-icon { font-size: 2.5rem; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
+.timeline-text { font-family: 'Great Vibes', cursive; font-size: 2rem; margin: 5px 0; }
+.timeline-time { font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; }
+
+/* --- 6. BLOQUE DE MAPA --- */
+.map-block { background-color: #F4F0F9; flex-direction: column; padding: 40px 20px; }
+.map-box { background: white; padding: 20px; border-radius: 30px; max-width: 400px; width: 100%; box-shadow: 0 4px 20px rgba(123, 90, 138, 0.15); text-align: center;}
+.map-box h2 { font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px; color: var(--lila-oscuro); }
+.map-container { width: 100%; height: 200px; border-radius: 20px; display: flex; justify-content: center; align-items: center; background-color: #ddd; background-image: url('https://i.postimg.cc/sXx3dQm1/lila-map-placeholder.png'); background-size: cover; position: relative; overflow: hidden; }
+.map-button { background-color: #9F7EBE; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.2s; }
+.map-button:hover { transform: scale(1.05); }
+
+/* --- RESPONSIVE EXTREMO --- */
+@media (min-width: 768px) {
+.section-block { padding: 60px 20px; }
+.polaroid-collage { max-width: 450px; gap: 15px; }
+.polaroid img { height: 120px; }
+.quinceanera-back { width: 150px; right: 10px; }
+.main-photo-box { max-width: 450px; }
+.quote-box { max-width: 600px; }
+.quote-text { font-size: 2.5rem; }
+.padrinos-container { padding: 40px; }
+.padrinos-flowers { height: 300px; }
+.padrinos-text-wrapper { font-size: 1.3rem; }
+}
+
 @media (max-width: 480px) {
-  .contador {
-    gap: 10px;
-  }
-  .caja {
-    min-width: 60px;
-    padding: 8px;
-    padding-bottom:20px;
-  }
-  .caja span {
-    font-size: 1.2rem;
-  }
-  .caja p {
-    font-size: 0.8rem;
-  }
-  .texto-invitacion {
-    max-width: 95%;
-    font-size: 1rem;
-    line-height: 1.4;
+.swipe-text { font-size: 1.8rem; }
+.polaroid-collage { gap: 8px; }
+.polaroid img { height: 70px; }
+.polaroid { padding: 4px 4px 15px 4px; }
+.flores-bottom-wrapper { height: 120px; }
+.quinceanera-back { width: 90px; bottom: 5px; right: 5px; }
+.main-photo-box h1 { font-size: 2.2rem; }
+.countdown-box { width: 45px; font-size: 1.2rem; }
 
-  }
-  .texto-invitacion p {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
+.padrinos-flowers { width: 20%; height: 150px; }
+.padrinos-text-wrapper { font-size: 0.8rem; width: 80%; }
+.divider-line { height: 60px; }
+.padrinos-name { font-size: 0.8rem; margin-bottom: 4px; }
+
+.itinerary-title { font-size: 2.5rem; }
+.timeline-text { font-size: 1.6rem; }
+.quote-text { font-size: 1.6rem; padding: 15px; }
+.quote-polaroid { max-width: 220px; }
 }
-
-
-
-/* 📱 Celulares */
-@media (max-width: 48em) { /* ~768px */
-  .texto-invitacion2 {
-    max-width: 65%;
-    max-height: 93%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .texto-invitacion2 p {
-    font-size: 1rem;
-    line-height: 1;
-  }
-
-  .texto-invitacion2 p.titulo-invitacion {
-    font-size: 1.5rem;
-  }
-
-  .item-itinerario {
-    margin: 1.0rem 0;
-    padding: 0.8rem;
-  }
-
-  .item-itinerario svg,
-  .item-itinerario .icono {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.5rem;
-  }
-}
-
-/* 📲 Tabletas */
-@media (min-width: 48em) and (max-width: 64em) { /* ~769px a 1024px */
-  .texto-invitacion2 {
-    max-width: 85%;
-    padding: 0.8rem;
-  }
-
-  .texto-invitacion2 p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  .texto-invitacion2 p.titulo-invitacion {
-    font-size: 1.8rem;
-  }
-
-  .item-itinerario {
-    margin: 1.8rem 0;
-    padding: 1rem;
-  }
-
-  .item-itinerario svg,
-  .item-itinerario .icono {
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.8rem;
-  }
-}
-
