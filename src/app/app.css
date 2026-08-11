@@ -425,7 +425,7 @@ backdrop-filter: blur(2px);
 
 @media (max-width: 480px) {
 .swipe-text { font-size: 1.8rem;  margin-top: -10vh;}
-.polaroid img { height: 50px; margin-top: -30vh;}
+.polaroid img { height: 50px; margin-top: -28vh;}
 .polaroid { padding: 4px 4px 14px 4px; }
 .flores-bottom-wrapper { height: 120px; }
 .marco-floral-container {
