@@ -139,15 +139,15 @@ padding: 30px 20px;
 .quote-text {
   font-family: 'Great Vibes', cursive;
   font-size: 2rem;
-  line-height: 1.6;              /* 🔥 más espacio entre líneas */
+  line-height: 1.4;              /* 🔥 más espacio entre líneas */
   color: var(--lila-oscuro);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(206, 178, 255, 0.4);
   padding: 30px 25px;            /* 🔥 más padding para que se vea más largo */
   border-radius: 20px;
   backdrop-filter: blur(5px);
   margin-bottom: 30px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  min-height: 220px;             /* 🔥 fuerza altura mínima */
+  min-height: 200px;             /* 🔥 fuerza altura mínima */
 }
 
 .quote-author {
@@ -175,14 +175,17 @@ font-family: 'Montserrat', sans-serif;
 
 /* --- 4. BLOQUE DE PADRINOS --- */
 .padrinos-block {
-background-color: #9C73C2;
-padding: 40px 20px;
-flex-direction: column;
+  background-color: "--lila-fondo";
+  padding: 40px 20px;
+  display: flex;              /* 🔥 importante: activa flexbox */
+  flex-direction: row;        /* imagen a la izquierda, texto a la derecha */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
 }
 
 .padrinos-container {
 display: flex;
-flex-direction: row;
 max-width: 600px;
 width: 100%;
 align-items: center;
@@ -194,23 +197,28 @@ backdrop-filter: blur(2px);
 }
 
 .padrinos-flowers {
-width: 25%;
-height: 200px;
-background-image: url("/assets/portada2.png");
-background-size: contain;
-background-position: left center;
-background-repeat: no-repeat;
+  width: 35%;
+  justify-content: left;
+  align-items: center;
+  margin-top: -6vh;
+  margin-left: -46vh;
+}
+
+.padrinos-flowers img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-left: 0;
 }
 
 .padrinos-text-wrapper {
-width: 75%;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-color: var(--lila-oscuro);
-font-family: 'Montserrat', sans-serif;
-padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lila-oscuro);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .padrinos-left { text-align: right; padding-right: 15px; width: 45%; }
@@ -222,7 +230,7 @@ padding: 10px;
 
 /* --- 5. BLOQUE DE ITINERARIO --- */
 .itinerary-block {
-background-color: #9171B3;
+background-color: "--lila-fondo";
 flex-direction: column;
 padding: 40px 20px;
 }
@@ -245,12 +253,49 @@ backdrop-filter: blur(2px);
 .timeline-time { font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; }
 
 /* --- 6. BLOQUE DE MAPA --- */
-.map-block { background-color: #F4F0F9; flex-direction: column; padding: 40px 20px; }
+.map-block { background-color: "--lila-fondo"; flex-direction: row; padding: 40px 20px; display: flex; gap: 20vh; padding: 40px 20px; flex-wrap: wrap; }
 .map-box { background: white; padding: 20px; border-radius: 30px; max-width: 400px; width: 100%; box-shadow: 0 4px 20px rgba(123, 90, 138, 0.15); text-align: center;}
 .map-box h2 { font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-bottom: 20px; color: var(--lila-oscuro); }
-.map-container { width: 100%; height: 200px; border-radius: 20px; display: flex; justify-content: center; align-items: center; background-color: #ddd; background-image: url('https://i.postimg.cc/sXx3dQm1/lila-map-placeholder.png'); background-size: cover; position: relative; overflow: hidden; }
+.map-container { width: 100%; height: 350px; border-radius: 20px; display: flex; justify-content: center; align-items: center; background-color: #ddd; background-image: url('https://i.postimg.cc/sXx3dQm1/lila-map-placeholder.png'); background-size: cover; position: relative; overflow: hidden; }
 .map-button { background-color: #9F7EBE; color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.2s; }
 .map-button:hover { transform: scale(1.05); }
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.quote-block2 {
+  background-color: var(--lila-fondo); /* ✅ usa la variable correctamente */
+  display: flex;                       /* 🔥 activa flexbox */
+  justify-content: center;             /* centra horizontalmente */
+  align-items: center;                 /* centra verticalmente */
+  height: 100vh;                       /* ocupa toda la pantalla */
+}
+
+.quote-box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 95%;
+  text-align: center;
+}
+
+.quote-text2 {
+  background: rgba(206, 178, 255, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+.quote-text2 img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 /* --- RESPONSIVE EXTREMO --- */
 @media (min-width: 768px) {
@@ -259,26 +304,98 @@ backdrop-filter: blur(2px);
 .main-photo-box { max-width: 450px; }
 .quote-box { max-width: 600px; }
 .quote-text { font-size: 2.5rem; }
-.padrinos-container { padding: 40px; }
-.padrinos-flowers { height: 300px; }
-.padrinos-text-wrapper { font-size: 1.3rem; }
+
+.padrinos-block {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .padrinos-flowers {
+    width: 35%;
+    margin-top: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .padrinos-text-wrapper {
+    font-size: 1.3rem;
+    width: 65%;
+  }
+
+  .quote-block2 {
+    display: flex;
+    justify-content: center;   /* 🔥 centra horizontalmente */
+    align-items: center;       /* 🔥 centra verticalmente */
+    height: 100vh;             /* ocupa toda la pantalla */
+    background-color: var(--lila-fondo);
+  }
+
+  .quote-box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;            /* 🔥 controla el ancho */
+    text-align: center;
+  }
+
+  .quote-text2 {
+    background: rgba(206, 178, 255, 0.3); /* más transparente */
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 20px;
+  }
+
+  .quote-text2 img {
+    max-width: 100%;           /* 🔥 se adapta al ancho */
+    height: auto;
+    display: block;
+    margin: 0 auto;            /* 🔥 centrada */
+  }
 }
 
 @media (max-width: 480px) {
 .swipe-text { font-size: 1.8rem; }
-.polaroid img { height: 70px; }
-.polaroid { padding: 4px 4px 15px 4px; }
+.polaroid img { height: 50px; }
+.polaroid { padding: 4px 4px 14px 4px; }
 .flores-bottom-wrapper { height: 120px; }
 .main-photo-box h1 { font-size: 2.2rem; }
 .countdown-box { width: 45px; font-size: 1.2rem; }
 
-.padrinos-flowers { width: 20%; height: 150px; }
-.padrinos-text-wrapper { font-size: 0.8rem; width: 80%; }
+.padrinos-block {flex-direction: column; justify-content: center; align-items: center; margin-left: 10vh;}
+  .padrinos-container { position: fixed; margin-bottom: 20px; width: 80%; margin-left: -15vh; }
+
+  .padrinos-flowers {
+    width: 100%;
+    height: 105vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .padrinos-flowers img { width: 100%; height: 100%; object-fit: cover; display: block;  }
+  .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
+
 .divider-line { height: 60px; }
 .padrinos-name { font-size: 0.8rem; margin-bottom: 4px; }
 
 .itinerary-title { font-size: 2.5rem; }
-.timeline-text { font-size: 1.6rem; }
+.timeline-text { font-size: 1.4rem; }
 .quote-text { font-size: 1.6rem; padding: 15px; }
-.quote-polaroid { max-width: 220px; }
+.quote-polaroid { max-width: 100%; height: 40%; }
+
+.quote-block2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+  }
+  .quote-text2 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 }
