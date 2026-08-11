@@ -395,7 +395,7 @@ backdrop-filter: blur(2px);
   .padrinos-flowers {
     width: 35%;
     margin-top: 0;
-    margin-left: 0;
+    margin-left: -30;
     display: flex;
     justify-content: flex-start;
   }
