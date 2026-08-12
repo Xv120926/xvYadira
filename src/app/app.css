@@ -1,25 +1,24 @@
 :root {
---lila-fondo: hsl(271, 33%, 62%);
---lila-oscuro: #4D2A63;
---lila-medio: #CBB5D9;
---blanco: #ffffff;
+    --lila-fondo: hsl(271, 33%, 62%);
+    --lila-oscuro: #4D2A63;
+    --lila-medio: #CBB5D9;
+    --blanco: #ffffff;
 }
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Evita que aparezca una barra de scroll horizontal en móviles */
+    overflow-x: hidden;
     background-color: var(--lila-fondo);
     font-family: 'Montserrat', sans-serif;
 }
 
-
-/* --- SISTEMA DE SCROLL CON ANIMACIONES --- */
+/* --- SISTEMA DE SCROLL --- */
 .scroll-container {
 width: 100%;
 overflow-x: hidden;
@@ -29,158 +28,187 @@ scroll-snap-type: y mandatory; /* opcional: hace que cada sección se "pegue" al
 }
 
 .section-block {
-width: 100%;
-min-height: 100vh; /* Ocupa al menos toda la pantalla */
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 40px 20px;
-position: relative;
-/* Animación inicial (oculto) */
-opacity: 0;
-transform: translateY(50px);
-transition: all 1s ease-out;
-scroll-snap-align: start; /* opcional: cada bloque se alinea al inicio al hacer scroll */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1s ease-out;
+    margin-bottom: 10px;
 }
 
-/* Clase que se activa con JavaScript para mostrar el bloque */
 .section-block.visible {
-opacity: 1;
-transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
+
 
 /* --- 1. BLOQUE DE INICIO (DESLIZA) --- */
 .cover-block {
-  background-color: var(--lila-fondo);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 15px;
-  position: relative;
+    background-color: var(--lila-fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+    position: relative;
 }
 
 .marco-floral-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
 }
 
- .marco-floral-container img {
+.marco-floral-container img {
     display: block;
-    margin: 0 auto;       /* 🔥 centra horizontalmente */
-    width: 100%;      /* ocupa todo el ancho disponible */
+    margin: 0 auto;
+    width: 100%;
     max-width: 400px;
     height: auto;
-  }
-
-  /* Imagen de abajo */
-.marco-floral-container-down{
-  margin-top: -55vh;   /* 🔥 acércala al GIF */
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
+.marco-floral-container-down {
+    margin-top: -40px; /* CORREGIDO: márgenes normales para móvil */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .swipe-text {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  color: white;
-  margin: 10px 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  margin-top: -20vh;
-  word-wrap: break-word; /* Corta la palabra si no cabe */
-  white-space: normal;   /* Permite que el texto baje a la siguiente línea */
-  text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
 }
-
-.flores-bottom-wrapper {
-position: relative;
-width: 100%;
-max-width: 350px;
-height: 140px;
-margin-top: -10px;
-z-index: 1;
-}
-.swipe-hint {
-  font-size: 2.5rem;
-  color: white;
-  animation: bounce 1.5s infinite;
-  margin-top: 15px;
-}
-@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
 
 .polaroid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  z-index: -2; /* 🔥 queda encima de las flores */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    z-index: 2; /* CORREGIDO: quitado el -2 para que se vean */
 }
 
 .polaroid img {
-  width: 100%;
-  height: auto;
-  min-height: 800px;
-  object-fit: contain; /* mantiene proporción */
-  display: block;
-  margin: 0 auto;
-  margin-top: -10vh;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.flores-bottom-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.swipe-hint {
+    font-size: 2.5rem;
+    color: white;
+    animation: bounce 1.5s infinite;
+    margin-top: 15px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
 }
 
 /* --- 2. BLOQUE DE IMAGEN Y CONTADOR --- */
 .info-block {
-background-color: "--lila-fondo";
-flex-direction: column;
-padding: 20px;
+    background-color: var(--lila-fondo); /* CORREGIDO: quitadas las comillas */
+    flex-direction: column;
+    padding: 20px;
 }
 
 .main-photo-box {
-background: white;
-padding: 15px 15px 25px 15px;
-border-radius: 20px;
-max-width: 350px;
-width: 100%;
-box-shadow: 0 4px 20px rgba(123, 90, 138, 0.15);
-text-align: center;
+    background: white;
+    padding: 15px 15px 25px 15px;
+    border-radius: 20px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(123, 90, 138, 0.15);
+    text-align: center;
 }
+
 .main-photo { width: 100%; border-radius: 15px; margin-bottom: 15px; }
-.text-overlay h1 { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--lila-oscuro); margin: 5px 0; line-height: 1.1; word-wrap: break-word; white-space: normal; text-align: center; }
-.date-text { font-size: 1.1rem; color: #8E6EA9; margin-bottom: 15px; font-weight: 500; word-wrap: break-word; white-space: normal; text-align: center; }
+
+.text-overlay h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: var(--lila-oscuro);
+    margin: 5px 0;
+    line-height: 1.1;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
+
+.date-text {
+    font-size: 1.1rem;
+    color: #8E6EA9;
+    margin-bottom: 15px;
+    font-weight: 500;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+}
 
 .countdown-container {
-display: flex;
-justify-content: space-between;
-background: #E6DEF0;
-padding: 15px;
-border-radius: 15px;
-margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    background: #E6DEF0;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 10px;
 }
-.countdown-box {
-background: #CBB5D9;
-padding: 8px 5px;
-border-radius: 10px;
-width: 50px;
-color: var(--lila-oscuro);
-font-size: 1.5rem;
-font-weight: bold;
-}
-.countdown-label { font-size: 0.7rem; color: var(--lila-oscuro); margin-top: 5px; display: block; font-weight: 600; }
 
-/* --- 3. BLOQUE DE FRASE CON POLAROID Y MARIPOSAS --- */
+.countdown-box {
+    background: #CBB5D9;
+    padding: 8px 5px;
+    border-radius: 10px;
+    width: 50px;
+    color: var(--lila-oscuro);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
+    color: var(--lila-oscuro);
+    margin-top: 5px;
+    display: block;
+    font-weight: 600;
+}
+
+/* --- 3. BLOQUE DE FRASE CON MARIPOSAS --- */
 .quote-block {
-background-color: "--lila-fondo";
-background-image: url("../assets/mariposas.png");
-background-size: cover;
-background-position: center;
-flex-direction: column;
-padding: 30px 20px;
+    background-color: var(--lila-fondo); /* CORREGIDO */
+    background-image: url("../assets/mariposas.png");
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    padding: 30px 20px;
 }
 
 .quote-box {
@@ -208,10 +236,10 @@ padding: 30px 20px;
 }
 
 .quote-author {
-margin-top: 5px;
-font-weight: bold;
-color: var(--lila-oscuro);
-font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    font-weight: bold;
+    color: var(--lila-oscuro);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .quote-polaroid {
@@ -230,15 +258,15 @@ font-family: 'Montserrat', sans-serif;
 }
 .quote-polaroid img { width: 100%; height: auto; border-radius: 4px; display: block; }
 
-/* --- 4. BLOQUE DE PADRINOS --- */
+/* --- 4. BLOQUE DE PADRINOS (CORREGIDO PARA SER RESPONSIVO) --- */
 .padrinos-block {
   background-color: "--lila-fondo";
   padding: 20px 40px;
   display: flex;              /* 🔥 importante: activa flexbox */
   flex-direction: row;        /* imagen a la izquierda, texto a la derecha */
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .padrinos-container {
@@ -254,17 +282,18 @@ backdrop-filter: blur(2px);
 }
 
 .padrinos-flowers {
-  width: 35%;
-  justify-content: left;
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
   align-items: center;
-  margin-top: -6vh;
-  margin-left: -46vh;
+  margin-top: 0;
+  margin-left: -60vh;
 }
 
 .padrinos-flowers img {
   max-width: 100%;
   height: auto;
-  display: block;
+  display: flex;
   border-radius: 12px;
   margin-left: 0;
 }
@@ -290,26 +319,26 @@ backdrop-filter: blur(2px);
 
 /* --- 5. BLOQUE DE ITINERARIO --- */
 .itinerary-block {
-background-color: "--lila-fondo";
-flex-direction: column;
-padding: 40px 20px;
+    background-color: var(--lila-fondo); /* CORREGIDO */
+    flex-direction: column;
+    padding: 40px 20px;
 }
 
 .itinerary-content {
-max-width: 400px;
-width: 100%;
-text-align: center;
-color: white;
-background: rgba(255,255,255,0.1);
-padding: 30px 20px;
-border-radius: 30px;
-backdrop-filter: blur(2px);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 30px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
 }
 
 .itinerary-title { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-bottom: 20px; color: white; }
 .timeline-item { margin: 25px 0; color: white; }
 .timeline-icon { font-size: 2.5rem; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); }
-.timeline-text { font-family: 'Great Vibes', cursive; font-size: 2rem; margin: 5px 0; word-wrap: break-word; white-space: normal; text-align: center; word-wrap: break-word; white-space: normal; text-align: center;}
+.timeline-text { font-family: 'Great Vibes', cursive; font-size: 2rem; margin: 5px 0; word-wrap: break-word; white-space: normal; text-align: center;}
 .timeline-time { font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; }
 
 /* --- 6. BLOQUE DE MAPA --- */
@@ -360,141 +389,57 @@ backdrop-filter: blur(2px);
   margin: 0 auto;
 }
 
-/* --- RESPONSIVE EXTREMO --- */
-@media (min-width: 768px) {
-.section-block { padding: 1px 0 }
-.marco-floral-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;          /* 🔥 límite de ancho */
-    display: flex;
-    flex-direction: column;        /* 🔥 en fila */
-    align-items: center;    /* centra horizontalmente */
-    height: auto;
-    margin-top: 1vh;
-  }
+/* ==================================================================== */
+/*                 MEDIA QUERIES RESPONSIVOS                            */
+/* ==================================================================== */
 
-  .marco-floral-container img {
-    max-width: 80%;          /* 🔥 más compacto en desktop */
-    height: auto;
-  }
-.polaroid img { height: 120px; padding: 10vh 0 ;}
-.main-photo-box { max-width: 450px; }
-.quote-box { max-width: 600px; }
-.quote-text { font-size: 2.5rem; }
-
-.padrinos-block {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .padrinos-flowers {
-    width: 55%;
-    margin-top: 0;
-    margin-left: -60vh;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .padrinos-text-wrapper {
-    font-size: 1.3rem;
-    width: 75%;
-  }
-
-  .quote-block2 {
-    display: flex;
-    justify-content: center;   /* 🔥 centra horizontalmente */
-    align-items: center;       /* 🔥 centra verticalmente */
-    height: 100vh;             /* ocupa toda la pantalla */
-    background-color: var(--lila-fondo);
-  }
-
-  .quote-box2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;            /* 🔥 controla el ancho */
-    text-align: center;
-  }
-
-  .quote-text2 {
-    background: rgba(206, 178, 255, 0.3); /* más transparente */
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    padding: 20px;
-  }
-
-  .quote-text2 img {
-    max-width: 100%;           /* 🔥 se adapta al ancho */
-    height: auto;
-    display: block;
-    margin: 0 auto;            /* 🔥 centrada */
-  }
+/* 1. CELULARES MUY PEQUEÑOS (Menos de 480px) */
+@media (max-width: 480px) {
+    .swipe-text { font-size: 1.6rem; }
+    .text-overlay h1 { font-size: 2.2rem; }
+    .countdown-box { width: 40px; font-size: 1rem; }
+    .padrinos-block {flex-direction: column; justify-content: center; align-items: center; margin-left: 10vh;}
+    .padrinos-container { position: fixed; margin-bottom: 20px; width: 80%; margin-left: -15vh; }
+    .padrinos-flowers { width: 180%;  overflow: hidden; position: relative;}
+    .padrinos-flowers img { width: 100%; height: auto; object-fit: cover; display: block;  }
+    .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
 }
 
-@media (max-width: 480px) {
-.swipe-text { font-size: 1.8rem;  margin-top: -5vh;}
-.polaroid img { height: 50px; margin-top: -15vh;}
-.polaroid { padding: 4px 4px 14px 4px; }
-.flores-bottom-wrapper { height: 100px; }
-.marco-floral-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    margin-top: -9vh;
-    padding: 5px;
-  }
+/* 2. CELULARES Y TABLETS (481px a 1023px) */
+@media (min-width: 481px) and (max-width: 1023px) {
+    .marco-floral-container img { max-width: 350px; }
+    .main-photo-box { max-width: 400px; }
+    .padrinos-flowers { width: 80%;  overflow: hidden; position: relative;}
+    .padrinos-block {flex-direction: column; justify-content: center; align-items: center; margin-left: 10vh;}
+    .padrinos-container { position: fixed; margin-bottom: 20px; width: 80%; margin-left: -15vh; }
+    .padrinos-flowers img { width: 100%; height: 100%; object-fit: cover; display: block;  }
+    .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
+    .quote-polaroid { max-width: 300px; min-height: 300px; }
+    .itinerary-title { font-size: 2.8rem; }
+    .timeline-text { font-size: 1.8rem; }
+}
 
-  .marco-floral-container img {
-    width: 100%;                /* 🔥 ocupa todo el ancho */
-    height: auto;
-  }
-  .marco-floral-container-down {
-    margin-top: -38vh;   /* 🔥 más cerca del GIF en celular */
-    max-width: 110%;      /* ocupa casi todo el ancho */
-  }
-.main-photo-box h1 { font-size: 2.2rem; }
-.countdown-box { width: 45px; font-size: 1.2rem; }
+/* 3. COMPUTADORAS (1024px en adelante) */
+@media (min-width: 1024px) {
+    .section-block { padding: 1px 0; }
+    .marco-floral-container img { max-width: 500px; }
+    .polaroid img { max-height: 60vh; padding: 0; }
+    .main-photo-box { max-width: 450px; }
 
-.padrinos-block {flex-direction: column; justify-content: center; align-items: center; margin-left: 10vh;}
-  .padrinos-container { position: fixed; margin-bottom: 20px; width: 80%; margin-left: -15vh; }
+    .quote-box { max-width: 600px; }
+    .quote-text { font-size: 2.5rem; }
+    .quote-polaroid { max-width: 400px; min-height: 400px; }
 
-  .padrinos-flowers {
-    width: 80%;
-    height: 105vh;
-    overflow: hidden;
-    position: relative;
-  }
-  .padrinos-flowers img { width: 100%; height: 100%; object-fit: cover; display: block;  }
-  .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
+    .padrinos-block { flex-direction: row; gap: 10px; }
+    .padrinos-container { flex-direction: row; max-width: 800px; padding: 1px 0; }
+    .padrinos-flowers { width: 55%; margin-bottom: 0; margin-top: 0; margin-right: -50vh; }
+    .padrinos-text-wrapper { font-size: 1.2rem; width: 60%; }
+    .padrinos-left { padding-right: 30px; }
+    .padrinos-right { padding-left: 30px; }
 
-.divider-line { height: 60px; }
-.padrinos-name { font-size: 0.8rem; margin-bottom: 4px; }
+    .itinerary-title { font-size: 3.5rem; }
+    .timeline-text { font-size: 2.2rem; }
 
-.itinerary-title { font-size: 2.5rem; }
-.timeline-text { font-size: 1.4rem; }
-.quote-text { font-size: 1.6rem; padding: 15px; }
-.quote-polaroid { max-width: 100%; height: 40%; }
-
-.quote-block2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0;
-  }
-  .quote-text2 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
+    .map-box { max-width: 500px; }
+    .quote-text2 img { max-width: 60%; }
 }
