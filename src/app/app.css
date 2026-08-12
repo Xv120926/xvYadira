@@ -76,7 +76,7 @@ scroll-snap-type: y mandatory; /* opcional: hace que cada sección se "pegue" al
 }
 
 .marco-floral-container-down {
-    margin-top: -40px; /* CORREGIDO: márgenes normales para móvil */
+    margin-top: -20vh; /* CORREGIDO: márgenes normales para móvil */
     max-width: 100%;
     height: auto;
     display: block;
@@ -96,11 +96,12 @@ scroll-snap-type: y mandatory; /* opcional: hace que cada sección se "pegue" al
 }
 
 .polaroid {
+  position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
-    z-index: 2; /* CORREGIDO: quitado el -2 para que se vean */
+    z-index: -2; /* CORREGIDO: quitado el -2 para que se vean */
 }
 
 .polaroid img {
@@ -110,6 +111,7 @@ scroll-snap-type: y mandatory; /* opcional: hace que cada sección se "pegue" al
     object-fit: contain;
     display: block;
     margin: 0 auto;
+    margin-top: -10vh;
 }
 
 .flores-bottom-wrapper {
@@ -403,6 +405,7 @@ backdrop-filter: blur(2px);
     .padrinos-flowers { width: 180%;  overflow: hidden; position: relative;}
     .padrinos-flowers img { width: 100%; height: auto; object-fit: cover; display: block;  }
     .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
+    .polaroid img { max-height: 60vh; padding: 0; margin-top: -8vh;}
 }
 
 /* 2. CELULARES Y TABLETS (481px a 1023px) */
