@@ -391,6 +391,26 @@ backdrop-filter: blur(2px);
   margin: 0 auto;
 }
 
+
+.confirmar-asistencia {
+  background: #fef8ff;
+  border: 2px solid #c9a9e6;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  color: #4a2c6f;
+  max-width: 90vh;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.confirmar-asistencia h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #6a3b9a;
+}
+
 /* ==================================================================== */
 /*                 MEDIA QUERIES RESPONSIVOS                            */
 /* ==================================================================== */
@@ -406,6 +426,14 @@ backdrop-filter: blur(2px);
     .padrinos-flowers img { width: 100%; height: auto; object-fit: cover; display: block;  }
     .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
     .polaroid img { max-height: 60vh; padding: 0; margin-top: -8vh;}
+    .confirmar-asistencia iframe {
+    width: 95%;       /* 🔥 ocupa casi todo el ancho */
+    height: 600px;    /* 🔥 más compacto */
+  }
+
+  .confirmar-asistencia h2 {
+    font-size: 1.4rem;
+  }
 }
 
 /* 2. CELULARES Y TABLETS (481px a 1023px) */
@@ -420,6 +448,14 @@ backdrop-filter: blur(2px);
     .quote-polaroid { max-width: 300px; min-height: 300px; }
     .itinerary-title { font-size: 2.8rem; }
     .timeline-text { font-size: 1.8rem; }
+    .confirmar-asistencia iframe {
+    width: 90%;
+    height: 700px;
+  }
+
+  .confirmar-asistencia h2 {
+    font-size: 1.6rem;
+  }
 }
 
 /* 3. COMPUTADORAS (1024px en adelante) */
@@ -445,4 +481,12 @@ backdrop-filter: blur(2px);
 
     .map-box { max-width: 500px; }
     .quote-text2 img { max-width: 60%; }
+    .confirmar-asistencia iframe {
+    width: 800px;
+    height: 800px;
+  }
+
+  .confirmar-asistencia h2 {
+    font-size: 2rem;
+  }
 }
