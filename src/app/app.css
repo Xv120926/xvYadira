@@ -426,13 +426,16 @@ backdrop-filter: blur(2px);
     .padrinos-flowers img { width: 100%; height: auto; object-fit: cover; display: block;  }
     .padrinos-text-wrapper { font-size: 0.9rem; width: 100%; text-align: center; }
     .polaroid img { max-height: 60vh; padding: 0; margin-top: -8vh;}
+    .confirmar-asistencia {
+      width: 105%;
+    }
     .confirmar-asistencia iframe {
-    width: 95%;       /* 🔥 ocupa casi todo el ancho */
-    height: 600px;    /* 🔥 más compacto */
-  }
+      width: 105%;       /* 🔥 ocupa casi todo el ancho */
+      height: 620px;    /* 🔥 más compacto */
+    }
 
   .confirmar-asistencia h2 {
-    font-size: 1.4rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -448,9 +451,12 @@ backdrop-filter: blur(2px);
     .quote-polaroid { max-width: 300px; min-height: 300px; }
     .itinerary-title { font-size: 2.8rem; }
     .timeline-text { font-size: 1.8rem; }
+    .confirmar-asistencia {
+      width: 90%;
+    }
     .confirmar-asistencia iframe {
     width: 90%;
-    height: 700px;
+    height: 720px;
   }
 
   .confirmar-asistencia h2 {

@@ -85,17 +85,28 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
   }
 
   openInvitation() {
+    // const cover = this.elRef.nativeElement.querySelector('.cover-block');
+    // const content = this.elRef.nativeElement.querySelector('.scroll-container');
+
+    // if (cover) {
+    //   cover.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
+    //   cover.style.transform = 'translateY(-100vh)';
+    //   cover.style.opacity = '0';
+
+    //   setTimeout(() => {
+    //     cover.style.display = 'none';
+    //   }, 800);
+    // }
     const cover = this.elRef.nativeElement.querySelector('.cover-block');
-    const content = this.elRef.nativeElement.querySelector('.scroll-container');
+    const nextSection = this.elRef.nativeElement.querySelector('.info-block');
 
     if (cover) {
       cover.style.transition = 'transform 0.8s ease, opacity 0.8s ease';
-      cover.style.transform = 'translateY(-100vh)';
-      cover.style.opacity = '0';
+      cover.style.opacity = '1.0'; // Hace que no desaparezca
+    }
 
-      setTimeout(() => {
-        cover.style.display = 'none';
-      }, 800);
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
 }
